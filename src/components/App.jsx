@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import HomePage from "./HomePage";
-import PostPage from "./PostPage";
+import Routes from "../Routes";
 
 export class App extends Component {
   render() {
     return (
       <div>
-        <HomePage />
-        <PostPage />
+        <Routes />
       </div>
     );
   }
