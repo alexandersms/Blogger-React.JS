@@ -1,0 +1,108 @@
+/* ------- GENERAL -------- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0e1823;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  color: #7f8d9c;
+  line-height: 1.8;
+}
+
+.container {
+  margin: 30px 150px;
+}
+
+/* -------- HEADER ------- */
+
+header {
+  background-color: #0a111a;
+  padding: 25px 70px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* --------- HOME --------- */
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article {
+  width: 32%;
+  padding: 32px 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.article:hover {
+  background-color: #1d2630;
+  border-radius: 7px;
+}
+
+.article h2 {
+  margin-top: 0;
+}
+
+/* ------------ POST -------------*/
+.post-container {
+  margin-top: 110px;
+}
+
+.post-container h2,
+.post-container p {
+  text-align: center;
+}
+
+.comments-container h2 {
+  text-align: left;
+}
+
+.comments-title {
+  text-align: left;
+  font-size: 20px;
+  margin: 50px 0 30px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.comment h3,
+.comment p {
+  text-align: left;
+  margin-left: 22px;
+}
+
+.comment h3 {
+  color: #7f8d9c;
+  font-size: 15px;
+}
+
+.comment p {
+  font-size: 14px;
+}
+
+.comment img {
+  width: 85px;
+}

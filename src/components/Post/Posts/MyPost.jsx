@@ -1,6 +1,3 @@
-const post = {
-  title: "Mon post",
-  description: "Ma decription"
-};
+const post = {};
 
 export default post;

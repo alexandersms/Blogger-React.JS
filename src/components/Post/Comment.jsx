@@ -1,14 +1,14 @@
 import React from "react";
 
-const Comment = props => {
+const Comment = ({ email, content, src }) => {
   return (
     <div className="comment">
       <div>
-        <img src="" alt="profile" />
+        <img src={src} alt="profile" />
       </div>
       <div>
-        <h3>{props.email}</h3>
-        <p>{props.content}</p>
+        <h3>{email}</h3>
+        <p>{content}</p>
       </div>
     </div>
   );
