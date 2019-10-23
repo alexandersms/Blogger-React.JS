@@ -1,3 +1,3 @@
-const post = {};
+const post = [];
 
 export default post;

@@ -3,6 +3,7 @@ import post from "./Posts/MyPost";
 import comments from "./Posts/Comments";
 import Comment from "./Comment";
 import ProfileImage from "../../img/profile.png";
+import Loader from "../Includes/Loader";
 
 class PostPage extends Component {
   constructor(props) {
@@ -18,9 +19,11 @@ class PostPage extends Component {
     fetch("https://jsonplaceholder.typicode.com/posts/" + id)
       .then(response => response.json())
       .then(response =>
-        this.setState({
-          post: response
-        })
+        setTimeout(() => {
+          this.setState({
+            post: response
+          });
+        }, 2000)
       );
     fetch("https://jsonplaceholder.typicode.com/posts/" + id + "/comments")
       .then(response => response.json())
@@ -44,12 +47,18 @@ class PostPage extends Component {
     return (
       <div className="container post-container">
         <div className="post">
-          <h2>{this.state.post.title}</h2>
-          <p>{this.state.post.body}</p>
+          {this.state.post.length === 0 ? (
+            <Loader />
+          ) : (
+            <div>
+              <h2>{this.state.post.title}</h2>
+              <p>{this.state.post.body}</p>
+            </div>
+          )}
         </div>
         <div className="comments-container">
           <h2 className="comments-title">Commentaires</h2>
-          {comments}
+          {comments.length === 0 ? <Loader /> : comments}
         </div>
       </div>
     );

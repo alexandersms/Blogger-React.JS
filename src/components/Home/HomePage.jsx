@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Post from "./Post";
+import Loader from "../Includes/Loader";
 
 class HomePage extends Component {
   constructor(props) {
@@ -14,9 +15,11 @@ class HomePage extends Component {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
       .then(response =>
-        this.setState({
-          posts: response
-        })
+        setTimeout(() => {
+          this.setState({
+            posts: response
+          });
+        }, 2000)
       );
   }
 
@@ -32,7 +35,9 @@ class HomePage extends Component {
     ));
     return (
       <div>
-        <div className="container articles-container">{posts}</div>
+        <div className="container articles-container">
+          {posts.length === 0 ? <Loader /> : posts}
+        </div>
       </div>
     );
   }
